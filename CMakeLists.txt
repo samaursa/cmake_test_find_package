@@ -5,11 +5,10 @@ project(MyExeProj)
 find_package(LibA)
 
 add_executable(MyExe
-  main.cpp
+  src/main.cpp
   )
 
-message(STATUS ${LibA_INCLUDE_DIRS})
-
 target_link_libraries(MyExe
-  LibA
+  PRIVATE
+    LibA
   )
